@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     var score = 0
     var index = 0
-    var quiz:[Quiz] = [Quiz(question: "Question", answer1: "1", answer2: "3", answer3: "2", answer4: "4", correct: "4"), ]
+    var quiz:[Quiz] = [Quiz(question: "How many minutes are in a year?", answer1: "5437", answer2: "2345", answer3: "9081", answer4: "8760", correct: "8760"), Quiz(question: "What year was the movie Titanic released?", answer1: "1997", answer2: "1987", answer3: "2000", answer4: "2002", correct: "1997"), ]
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -30,7 +30,18 @@ class ViewController: UIViewController {
        d.setTitle(quiz[index].answer4, for: .normal)
         
     }
-
+    
+    @IBAction func next(_ sender: UIButton) {
+    }
+    
+    @IBAction func checkAnswer(_ sender: UIButton) {
+        
+        if sender.titleLabel?.text ==  quiz[index].correct
+        {
+            sender.backgroundColor = .green
+        }
+    }
+    
 
 }
 
